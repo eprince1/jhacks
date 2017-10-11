@@ -1,0 +1,31 @@
+.canvas {
+    position: absolute;
+    z-index: -1;
+}
+
+.top100 {
+    margin-top: 200px;
+}
+
+.bottom50 {
+    margin-bottom: 50px;
+}
+
+.coming-soon {
+    z-index: 1;
+    position: absolute;
+    margin-left: 400px;
+}
+
+.slider2 {
+    position: absolute;
+    margin-left: 800px;
+}
+
+.rangeslider--is-lowest-value {
+  background-color: black;
+}
+
+.rangeslider--is-highest-value .rangeslider__fill {
+  background-color: turquoise;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="rangeslider/rangeslider.css">
+  </head>
+    <body>
+        <div class="container-fluid">
+            <div class="canvas row">
+                <div class="coming-soon">
+                    
+                    <div class="text top100 bottom50">
+                        <h1 class="">Create something awesome</h1>
+                        <h2>JHacks 2018</h2>
+                        <small><i>Coming Soon</i></small>
+                    </div>
+                    <input class="slider1 rangeslider__fill" type="range" value="" step=".01" min="0" max="1">
+                    <h3 class="output1" align="center"></h3>
+                    <input class="slider2" type="range" value="" step="1" min="0" max="12">
+                    <h3 class="output2"></h3>
+                    <input class="slider3" type="range" value="" step="20" min="20" max="120">
+                    <h3 class="output3"></h3>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- All the scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.1.0/trianglify.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="rangeslider/rangeslider.min.js"></script>
+        <script type="text/javascript" src="rangeslider/rangeslider.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+    <script>
+        $(document).ready(function () {
+            var colors = ["YlGnBu", "YlOrRd", "PuOr", "GnBu", "YlOrBr", "PRGn", "Purples", "Blues", "Oranges", "Reds", "Spectral", "PuRd"];
+            var choice = Math.floor(Math.random()*13)
+            var curves = Math.random();
+            var size = [20, 40, 60, 80, 100, 120];
+            var mySize = Math.floor(Math.random()*6);
+            curves = Math.round(100*curves)/100;
+            var actualInnerWidth = $("body").prop("clientWidth");
+            var pattern = Trianglify({
+                cell_size: size[mySize],
+                variance: curves,
+                height: window.innerHeight,
+                width: actualInnerWidth,
+                x_colors: colors[choice],
+            });
+            $(".slider1").attr("value", curves);
+            $(".slider2").attr("value", choice);
+            $(".slider3").attr("value", size[mySize]);
+            $(".canvas").append(pattern.canvas());
+            $(function() {
+                const cssClasses = [
+                    'rangeslider--is-lowest-value',
+                    'rangeslider--is-highest-value'
+                ];
+                var x = 20;
+                var slideVal1 = $(".slider1").val();;
+                var slideVal2 = choice;
+                var slideVal3 = $(".slider3").val();
+                $('input[type=range]')
+                    .rangeslider({
+                        polyfill: false
+                    })
+                    .on('input', function() {
+                    slideVal1 = $(".slider1").val();
+                    slideVal2 = $(".slider2").val();
+                    slideVal3 = $(".slider3").val();
+                    
+                    //const fraction = (this.value - this.min) / (this.max - this.min);
+                    const fraction = (this.value - this.min) / (this.max - this.min);
+                    if (fraction === 0) {
+                        this.nextSibling.classList.add(cssClasses[0]);
+                    } else if (fraction === 1) {
+                        this.nextSibling.classList.add(cssClasses[1]);
+                    } else {
+                        this.nextSibling.classList.remove(...cssClasses)
+                    }
+                    $("canvas").remove();
+                    if (slideVal3 == 20) {
+                        x = 20;
+                    } else if (slideVal3 == 40) {
+                        x = 40;
+                    } else if (slideVal3 == 60) {
+                        x = 60;
+                    } else if (slideVal3 == 80) {
+                        x = 80;
+                    } else if (slideVal3 == 100) {
+                        x = 100;
+                    } else {
+                        x = 120;
+                    }
+                   
+                    pattern = Trianglify({
+                        cell_size: x,
+                        variance: slideVal1,
+                        height: window.innerHeight,
+                        width: actualInnerWidth,
+                        x_colors: colors[slideVal2] 
+                    });
+                    $(".canvas").append(pattern.canvas());
+                });
+            });
+            
+            
+        }); 
+    </script>
+</html>
