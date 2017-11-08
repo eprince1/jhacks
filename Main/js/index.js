@@ -34,22 +34,22 @@ $(document).ready(function() {
         reset: true
     });
     sr.reveal('.q1', {
-        duration: 2000
+        duration: 1000
     });
     sr.reveal('.q2', {
-        duration: 2000
+        duration: 1000
     });
     sr.reveal('.q3', {
-        duration: 2000
+        duration: 1000
     });
     sr.reveal('.q4', {
-        duration: 2000
+        duration: 1000
     });
     sr.reveal('.q5', {
-        duration: 2000
+        duration: 1000
     });
     sr.reveal('.q6', {
-        duration: 2000
+        duration: 1000
     });
 });
 
