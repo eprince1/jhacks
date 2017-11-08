@@ -1,0 +1,60 @@
+#mainNavbar {
+    background: #1f0cc9;
+}
+.topSpace {
+    margin-top: 50px;
+}
+
+.carousel {
+   /* background: linear-gradient(to right bottom, #12243A, #F05052) fixed;  */
+    background: #F05052; 
+    margin-top: 20px;
+}
+
+.carousel .item { 
+    min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+
+.register-card {
+    margin-top: 50px;
+    margin-bottom: 50px; 
+    padding: 60px;
+}
+
+.date {
+    margin-bottom: 20px;
+}
+
+.q1,.q2,.q3,.q4,.q5,.q6 {
+    margin: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    align-content: center;
+    background: #F05052;
+}
+
+.boldThis {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+#faq {
+    padding-top: 50px;
+    background-color: #12243A;
+}
+
+#about {
+
+}
+
+.top50 {
+    margin-top: 50px;
+}
+
+.bottom50 {
+    margin-bottom: 50px;
+}
