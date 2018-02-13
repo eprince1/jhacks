@@ -1,5 +1,5 @@
 #mainNavbar {
-    background: turquoise;
+    
 }
 .topSpace {
     margin-top: 50px;
@@ -7,12 +7,16 @@
 
 .carousel {
    /* background: linear-gradient(to right bottom, #12243A, #F05052) fixed;  */
-    background: #F05052; 
     margin-top: 20px;
+    background-size: cover;
+    min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    max-height: 500px;
 }
 
 .carousel .item { 
     min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    max-height: 500px;
+    background-size: cover;
 }
 
 .register-card {
@@ -46,6 +50,10 @@
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #12243A;
+}
+
+#register {
+    background: #12243A;
 }
 
 .jumbotron {
@@ -122,4 +130,12 @@
 
 .location-content {
     background-color: #F05052;
+}
+
+#slidecontainer {
+    background-color: black;
+}
+
+.image {
+    
 }
