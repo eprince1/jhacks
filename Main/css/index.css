@@ -1,6 +1,10 @@
 #mainNavbar {
     
 }
+.canvas {
+    z-index: -1;
+    background-size: cover;
+}
 .topSpace {
     margin-top: 50px;
 }
@@ -21,7 +25,6 @@
 
 .register-card {
     margin-top: 50px;
-    margin-bottom: 50px; 
     padding: 60px;
 }
 
@@ -80,8 +83,10 @@
     background-color: #F05052;
 }
 
-.triangleBox {
-  
+.canvas {
+    z-index: -100;
+    position: absolute;
+    width: 100%;
 }
 
 .rangeslider--is-lowest-value {
@@ -130,6 +135,13 @@
 
 .location-content {
     background-color: #F05052;
+}
+#location {
+    margin-top: 100px;
+}
+
+#schedule {
+    margin-bottom: 50px;
 }
 
 #slidecontainer {
