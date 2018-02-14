@@ -1,31 +1,39 @@
 #mainNavbar {
     
 }
+.navbar-brand {
+    font-weight: bold;
+    color: #F05052 !important;
+    font-size: 25pt !important;
+}
 .canvas {
-    z-index: -1;
+    z-index: -100;
     background-size: cover;
 }
 .topSpace {
     margin-top: 50px;
 }
 
+.carousel-inner > .item > img {
+    width:100%;
+    height:570px;
+  }
+
 .carousel {
    /* background: linear-gradient(to right bottom, #12243A, #F05052) fixed;  */
     margin-top: 20px;
-    background-size: cover;
-    min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
-    max-height: 500px;
+    min-height: 570px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    max-height: 570px;
 }
 
 .carousel .item { 
-    min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
-    max-height: 500px;
+    min-height: 570px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    max-height: 570px;
     background-size: cover;
 }
 
 .register-card {
     margin-top: 50px;
-    padding: 60px;
 }
 
 .date {
@@ -46,7 +54,7 @@
 }
 
 .white {
-    color: white;
+    color: white !important;
 }
 
 #faq {
@@ -57,6 +65,7 @@
 
 #register {
     background: #12243A;
+    padding-bottom: 60px;
 }
 
 .jumbotron {
@@ -71,16 +80,16 @@
     margin-bottom: 50px;
 }
 
-.sched-background {
-    background-color: #F05052;
-}
-
 .night {
     background-color: #12243A;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .day {
     background-color: #F05052;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .canvas {
@@ -107,7 +116,7 @@
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 60px;
 }
 
@@ -134,9 +143,10 @@
 }
 
 .location-content {
-    background-color: #F05052;
+    margin-bottom: 100px;
 }
 #location {
+    background-color: #CCC;
     margin-top: 100px;
 }
 
@@ -146,6 +156,8 @@
 
 #slidecontainer {
     background-color: black;
+    border: none;
+    border-radius: 5px;
 }
 
 .image {
